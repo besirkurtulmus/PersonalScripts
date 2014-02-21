@@ -7,7 +7,7 @@ How to Install:
 git clone git://github.com/besirkurtulmus/PersonalScripts/PersonalScripts.git
 ```
 
-1. ### MergePdf.py
+### MergePdf.py
 
 Merges pdf files in a given directory. Merges the pdf files alphabetically.
 
