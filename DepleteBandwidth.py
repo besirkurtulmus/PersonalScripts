@@ -87,8 +87,12 @@ elif len(sys.argv) == 4:
     number_requests = sys.argv[2]
     number_cycles = sys.argv[3]
 
-    depleteBandwidth = DepleteBandwidth(url, number_requests, number_cycles)
-
-    depleteBandwidth.Deplete()
+    if url.startswith("http://"):
+        depleteBandwidth = DepleteBandwidth(url, number_requests, number_cycles)
+        depleteBandwidth.Deplete()
+    else:
+        url = "http://" + url
+        depleteBandwidth = DepleteBandwidth(url, number_requests, number_cycles)
+        depleteBandwidth.Deplete()
 else:
     print "\nFor help, type the --help command."
