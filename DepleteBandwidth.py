@@ -69,7 +69,7 @@ class DepleteBandwidth:
 
             spent_bandwidth = (i + 1) * request_size
 
-            print "Amount of total bandwidth wasted: " + str(spent_bandwidth / (1024 * 1024)) + " MB"
+            print "Amount of total bandwidth wasted: " + str(spent_bandwidth / 1024) + " MB"
 
             time.sleep(execute_cooldown)
 
