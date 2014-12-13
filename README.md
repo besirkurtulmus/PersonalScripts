@@ -26,3 +26,23 @@ Example:
 $ python MergPdf.py ~/Desktop/pdfFiles/
 Pdf files merged in ~/Desktop/pdfFiles/allPdfPages.pdf
 ```
+### 2. DepleteBandwidth.py
+
+Depletes and wastes the bandwidth of the given web server.
+
+Usage:
+```bash
+$ python DepleteBandwidth.py {url} {number_requests} {number_cycles}
+```
+
+Help:
+```bash
+$ python DepleteBandwidth.py --help
+```
+
+Example:
+```bash
+$ python DepleteBandwidth.py http://example.com/file.zip 1000 1100
+Amount of total bandwidth wasted: 554 MB
+Amount of total bandwidth wasted: 1108 MB
+```
