@@ -23,6 +23,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
+import sys
 import time
 
 import grequests
@@ -42,15 +43,15 @@ class DepleteBandwidth:
     Amount of total bandwidth wasted: 554 MB
     Amount of total bandwidth wasted: 1108 MB
     '''
-	def __init__(self, url, number_requests, number_cycles):
-		self.url = url
+    def __init__(self, url, number_requests, number_cycles):
+        self.url = url
         self.number_requests = number_requests
         self.number_cycles = number_cycles
 
     def Deplete(self):
-        number_requests = self.number_requests
+        number_requests = int(self.number_requests)
 
-        number_cycles = self.number_cycles
+        number_cycles = int(self.number_cycles)
 
         execute_cooldown = 5
 
@@ -73,8 +74,8 @@ class DepleteBandwidth:
             time.sleep(execute_cooldown)
 
 if (len(sys.argv) == 2) and (sys.argv[1] == "--help"):
-	print """\nUSAGE: $ python DepleteBandwidth.py [url] [number_requests] [number_cycles]
-	url (String type): The target url
+    print """\nUSAGE: $ python DepleteBandwidth.py [url] [number_requests] [number_cycles]
+    url (String type): The target url
     number_requests (Integer type): The number of async requests made per iteration
     number_cycles (Integer type): The number of iterations of the script execution
 
@@ -90,4 +91,4 @@ elif len(sys.argv) == 4:
 
     depleteBandwidth.Deplete()
 else:
-	print "\nFor help, type the --help command."
+    print "\nFor help, type the --help command."
