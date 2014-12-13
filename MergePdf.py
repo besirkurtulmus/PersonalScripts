@@ -22,9 +22,12 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
-import sys
 import glob
-from pyPdf import PdfFileWriter, PdfFileReader
+import sys
+
+from pyPdf import PdfFileReader, PdfFileWriter
+
+
 class MergePdf:
 	'''
 	Description: Merges pdf pages into a single pdf document, in the given
@@ -32,7 +35,7 @@ class MergePdf:
 
 	Arguments:
 		Directory (String type): The directory of the pdf files
-	
+
 	Example:
 	>>> merge = MergePdf('/usr/root/Desktop/pdfFiles/')
 	Pdf files merged in /usr/root/Desktop/allPdfPages.pdf
@@ -57,7 +60,7 @@ class MergePdf:
 		print "Pdf files merged in " + self.directory + "allPdfPages.pdf"
 
 if (len(sys.argv) == 2) and (sys.argv[1] == "--help"):
-	print """\nUSAGE: $ python merge-pdf.py [directory]
+	print """\nUSAGE: $ python MergePdf.py [directory]
 	directory (String type): The directory of the pdf files.
 
 EXAMPLE:
